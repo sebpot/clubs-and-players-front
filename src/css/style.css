@@ -1,0 +1,31 @@
+ul {
+    border: 1px solid black;
+}
+
+table {
+    min-width: 50%;
+}
+
+table, th, td {
+    border-collapse: collapse;
+    border: 1px solid black;
+    padding: 5px;
+}
+
+form {
+    padding: 10px;
+}
+
+input {
+    margin-bottom: 6px;
+    min-width: 50%;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    padding: 4px;
+    border-radius: 5px;
+    background-color: lightgreen;
+}

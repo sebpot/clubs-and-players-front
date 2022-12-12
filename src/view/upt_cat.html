@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAB4</title>
+    <script src="/src/js/upt_cat.js"></script>
+    <link rel="stylesheet" href="/src/css/style.css">
+</head>
+<body onload="onload()">
+    <div>
+        <h3>Update club:</h3>
+        <form id="form">
+            <label for="newCatName">Name:</label><br>
+            <input type="text" name="newCatName" id="newCatName" disabled><br>
+            <label for="newCatBudget">Budget:</label><br>
+            <input type="text" name="newCatBudget" id="newCatBudget"><br>
+            <label for="newCatYear">Year founded:</label><br>
+            <input type="text" name="newCatYear" id="newCatYear" disabled><br>
+            <button type="button" onclick="uptCategory()">Update</button>
+            <button type="button" onclick="window.location.href='/src/view/index.html'">Cancel</button>
+        </form>
+    </div>
+</body>
+</html>

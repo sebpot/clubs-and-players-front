@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAB4</title>
+    <script src="/src/js/upt_ele.js"></script>
+    <link rel="stylesheet" href="/src/css/style.css">
+</head>
+<body onload="onload()">
+    <div>
+        <h3>Update player:</h3>
+        <form id="form">
+            <label for="newEleName">Name and surname:</label><br>
+            <input type="text" name="newEleName" id="newEleName" disabled><br>
+            <label for="newEleAge">Age:</label><br>
+            <input type="text" name="newEleAge" id="newEleAge"><br>
+            <label for="newEleClub">Year founded:</label><br>
+            <input type="text" name="newEleClub" id="newEleClub"><br>
+            <button type="button" onclick="uptElement()">Update</button>
+            <button type="button" onclick=cancel()>Cancel</button>
+        </form>
+    </div>
+</body>
+</html>
