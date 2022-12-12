@@ -38,37 +38,49 @@ function getElementsOfCategory() {
     let xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function(){
         if (this.readyState == 4 && this.status == 200){
-            const eleDiv = document.getElementById("elements");
+            const eleDiv = document.getElementById("elements_div");
+            const table = document.createElement('table');
+            table.id = 'elements';
+
+            const headerRow = document.createElement('tr');
+            for(const header of ['Players', 'Actions']) {
+                const cell = document.createElement('th');
+                cell.innerText = header;
+                headerRow.appendChild(cell);
+            }
+            table.appendChild(headerRow);
+            eleDiv.appendChild(table);
+
             const res = JSON.parse(this.responseText);
-            console.log(res);
-
             res['players'].forEach(player => {
-                const item = document.createElement("li");
-
-                const span = document.createElement("span");
-                span.innerText = player + "  ";
-                item.appendChild(span);
+                const row = document.createElement('tr');
+                const itemCell = document.createElement('td');
+                itemCell.innerText = player;
 
                 const detButton = document.createElement("button");
                 detButton.onclick = function() {
                     window.location.href="/src/view/det_ele.html?cat_id=" + catId + "&ele_id=" + player;
                 };
                 detButton.innerText = "Details";
-                item.appendChild(detButton);
 
                 const uptButton = document.createElement("button");
                 uptButton.onclick = function() {
                     window.location.href="/src/view/upt_ele.html?cat_id=" + catId + "&ele_id=" + player;
                 };
                 uptButton.innerText = "Update";
-                item.appendChild(uptButton);
 
                 const delButton = document.createElement("button");
                 delButton.onclick = deleteElement(player);
                 delButton.innerText = "Delete";
-                item.appendChild(delButton);
 
-                eleDiv.appendChild(item);
+                const actCell = document.createElement('td');
+                actCell.appendChild(detButton);
+                actCell.appendChild(uptButton);
+                actCell.appendChild(delButton);
+
+                row.appendChild(itemCell);
+                row.appendChild(actCell);
+                table.appendChild(row);
             }); 
         }
     };
